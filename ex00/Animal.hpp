@@ -21,7 +21,14 @@ protected:
 	std::string type;
 public:
 	Animal();
+	Animal(const Animal& other);
 	~Animal();
+
+	Animal& operator=(const Animal& other);
+
+	void		setType(std::string type);
+	std::string	getType(void);
+	
 	void	makeSound(void);
 	
 };
