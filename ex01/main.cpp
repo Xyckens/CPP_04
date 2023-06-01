@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 21:58:22 by fvieira           #+#    #+#             */
-/*   Updated: 2023/05/30 21:58:24 by fvieira          ###   ########.fr       */
+/*   Created: 2023/06/01 16:02:04 by fvieira           #+#    #+#             */
+/*   Updated: 2023/06/01 16:02:07 by fvieira          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-#include <iostream>
-
-class Animal
+int main(void)
 {
-protected:
-	std::string type;
-public:
-	Animal();
-	Animal(const Animal& other);
-	~Animal();
+	int	size = 100;
+	new Animal* animal[size];
+	for (int i = 0; i < size / 2; i++)
+		animal[i] = new Dog();
+	for (i; i < size; i++)
+		animal[i] = new Cat();
 
-	Animal& operator=(const Animal& other);
-
-	void		setType(const std::string type);
-	std::string	getType(void) const;
-	
-	virtual void	makeSound(void) const;
-	
-};
-#endif
+	return 0;
+}

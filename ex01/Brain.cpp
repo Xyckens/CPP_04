@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 21:57:44 by fvieira           #+#    #+#             */
-/*   Updated: 2023/05/30 21:57:47 by fvieira          ###   ########.fr       */
+/*   Created: 2023/06/01 19:23:49 by fvieira           #+#    #+#             */
+/*   Updated: 2023/06/01 19:23:51 by fvieira          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Brain.hpp"
 
-Dog::Dog() : Animal()
+Brain::Brain()
 {
-	std::cout << "Dog Constructor.\n";
-	setType("Dog");
+	std::cout << "Brain default constructor\n";
 }
 
-Dog::Dog(const Dog& other) : Animal(other)
+Brain::Brain(const Brain& other)
 {
-	std::cout << " Dog Copy Constructor.\n";
+	std::cout << "Brain copy constructor\n";
 	*this = other;
-
 }
 
-Dog::~Dog()
+Brain& Brain::operator=(const Brain& other)
 {
-	std::cout << " Dog Destructor.\n";
-}
-
-Dog& Dog::operator=(const Dog& other)
-{
-	std::cout << "Dog Copy Assignment operator.\n";
-	(std::string) this->type = other.getType();
+	std::cout << "Brain copy operator\n";
+	this->ideas = other.ideas;
 	return (*this);
 }
 
-void	Dog::makeSound() const
+Brain::~Brain()
 {
-	std::cout << "AAAAAWWWOOOOOOOOOOOOOOOOOOOOO\n";
+	std::cout << "Brain destructor\n";
 }
+
