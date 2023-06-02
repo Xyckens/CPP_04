@@ -10,19 +10,18 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex03
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp \
-	Animal.cpp \
-	Cat.cpp \
-	Dog.cpp \
-	WrongCat.cpp \
-	WrongAnimal.cpp \
-	Brain.cpp
+	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
+	MateriaSource.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

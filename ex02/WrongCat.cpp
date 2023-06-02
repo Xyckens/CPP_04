@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 21:57:55 by fvieira           #+#    #+#             */
-/*   Updated: 2023/05/30 21:57:58 by fvieira          ###   ########.fr       */
+/*   Created: 2023/06/01 17:56:57 by fvieira           #+#    #+#             */
+/*   Updated: 2023/06/01 17:56:59 by fvieira          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() : Animal()
+WrongCat::WrongCat() : WrongAnimal()
 {
-	std::cout << "Cat Constructor.\n";
-	this->ideas = new Brain();
-	setType("Cat");
+	std::cout << "WrongCat Constructor.\n";
+	setType("WrongCat");
 }
 
-Cat::Cat(const Cat& other) : Animal(other)
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
 {
-	std::cout << " Cat Copy Constructor.\n";
+	std::cout << " WrongCat Copy Constructor.\n";
 	*this = other;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Cat Destructor.\n";
-	delete this->ideas;
+	std::cout << " WrongCat Destructor.\n";
 }
 
-Cat& Cat::operator=(const Cat& other)
+WrongCat& WrongCat::operator=(const WrongCat& other)
 {
-	std::cout << "Cat Copy Assignment operator.\n";
-	*this = other;
+	std::cout << "WrongCat Copy Assignment operator.\n";
+	(std::string) this->type = other.getType();
 	return (*this);
 }
 
-void	Cat::makeSound() const
+void	WrongCat::makeSound()
 {
 	std::cout << "MIAAAAAAAAAAAAAAAAAAAAUUUUUUUUUUU\n";
 }
-
